@@ -3,19 +3,16 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { StatusBarPage } from '../pages/status-bar/status-bar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BatteryStatus, BatteryStatusResponse } from '@ionic-native/battery-status';
 
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage
+    StatusBarPage
   ],
   imports: [
     BrowserModule,
@@ -24,13 +21,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage
+    StatusBarPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BatteryStatus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
